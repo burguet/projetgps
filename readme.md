@@ -5,8 +5,8 @@
 ## 1° LES ACCÈS
 
 Le projet peut être accessible via 2 IP :  
-    - __192.168.64.148__, l'adresse sur laquelle vous pouvez accéder au site.  
-    - __192.168.65.9__, l'adresse sur laquelle vous pouvez accéder à la BDD.
+    - __192.168.64.84__, l'adresse sur laquelle vous pouvez accéder au site.  
+    - __192.168.64.213__, l'adresse sur laquelle vous pouvez accéder à la BDD.
 
 Un partage Samba existe et est joignable au lecteur suivant : \\192.168.65.9\PartageApache
 
@@ -26,11 +26,6 @@ Base_PROJET
         └── passwd : varchar (200)  
         └── isAdmin : int (1)  
 
-      └── GPSdata  
-        ├── id int(11) NOT NULL  
-        ├── longitude varchar(10) NOT NULL  
-        └── latitude varchar(10) NOT NULL  
-        └── heure float NOT NULL  
 
        
 -----------------
@@ -44,7 +39,6 @@ Base_PROJET
     /css    
     /img    
     /js  
-    /scss    
     /vendor    
     .travis.yml  
     gulpfile.js  
@@ -69,18 +63,7 @@ Base_PROJET
         - *diagrammeclassphp.pdf*     
         - *ganttPrevi.pdf*   
         - *ganttTP2Reel.pdf*     
-        - *useCaseGPS.png* 
-
-* __./extend_pages__  
-*(Ce fichier est consacré aux pages founies avec le Bootstrap et qui pourrait peut-être vous être utiles, si besoin :)*  
-    *blank.php*   
-    *buttons.php*    
-    *cards.php*     
-    *charts.php*      
-    *utilities-animation.php*     
-    *utilities-border.php*    
-    *utilities-color.php*    
-    *utilities-other.php*  
+        - *useCaseGPS.png*   
 
 
 * __./main_pages__  

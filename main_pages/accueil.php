@@ -24,7 +24,6 @@ if (isset($_POST['deconnexion'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,23 +43,8 @@ if (isset($_POST['deconnexion'])) {
     <!-- Custom styles for this template-->
     <link href="../assets//css/sb-admin-2.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-
-    <!-- Inclure les fichiers CSS de Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-
-    <!-- Inclure votre code JavaScript Leaflet -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-
-    <!-- CSS personnalisé pour définir la taille de la carte -->
-    <style>
-        #map {
-            height: 320px; /* Ajustez la hauteur selon vos besoins */
-            width: 100%;   /* Ajustez la largeur selon vos besoins */
-        }
-    </style>
-    
+    <!-- CSS POUR LINTERFACE CUSTOM-->
+    <link href="../assets//css/sb-admin-2.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -77,90 +61,12 @@ if (isset($_POST['deconnexion'])) {
                 </div>
                 <div class="sidebar-brand-text mx-3">PROJET <sup>GPS</sup></div>
             </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
+            
             <!-- Nav Item - Accueil -->
             <li class="nav-item active">
                 <a class="nav-link" href="accueil.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Accueil</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="../extend_pages/buttons.php">Buttons</a>
-                        <a class="collapse-item" href="../extend_pages/cards.php">Cards</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="../extend_pages/utilities-color.php">Colors</a>
-                        <a class="collapse-item" href="../extend_pages/utilities-border.php">Borders</a>
-                        <a class="collapse-item" href="../extend_pages/utilities-animation.php">Animations</a>
-                        <a class="collapse-item" href="../extend_pages/utilities-other.php">Other</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="../extend_pages/blank.php">Exemple</a>
-                        <a class="collapse-item" href="../extend_pages/blank.php">Exemple</a>
-                        <a class="collapse-item" href="../extend_pages/blank.php">Exemple</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.php">404 Page</a>
-                        <a class="collapse-item" href="../extend_pages/blank.php">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="../extend_pages/charts.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
             </li>
 
             <!-- Condition pour afficher la partie "Nav Item - Admin" uniquement si isAdmin est égal à 1 -->
@@ -229,128 +135,42 @@ if (isset($_POST['deconnexion'])) {
                         </li>
                     </ul>
                 </nav>
-                <!-- End of Topbar -->
+                <p id="status">Status : Aucun</p>
 
-                    <!-- Content Row -->
+                <fieldset sty>
+                    <label for="r">R</label>
+                    <input type="range" min="0" max="255" id="r" step="1" value="0">
+                    <output for="r" id="r_out">0</output>
+                </fieldset>  
+                
+                <fieldset>
+                    <label for="g">G</label>
+                    <input type="range" min="0" max="255" id="g" step="1" value="0">
+                    <output for="g" id="g_out">0</output>
+                </fieldset>
+                
+                <fieldset>
+                    <label for="b">B</label>
+                    <input type="range" min="0" max="255" id="b" step="1" value="0">
+                    <output for="b" id="b_out">0</output>
+                </fieldset>
 
-                    <div class="row">
+                <fieldset>
+                    <label for="w">W</label>
+                    <input type="range" min="0" max="255" id="w" step="1" value="0">
+                    <output for="w" id="w_out">0</output>
+                </fieldset>
 
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4" style="width: 1200px; height: 570px;">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Maps</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body" >
-                                    <div class="chart-area">
+                <fieldset>
+                    <input type="checkbox" id="changementAuto" name="changementAuto">
+                    <label for="changementAuto">Changement automatique</label>
+                </fieldset>
 
-                                    <?php
-                                    $sql = "SELECT longitude, latitude, heure FROM GPSdata ORDER BY id DESC LIMIT 0, 1";
-                                    $result = $GLOBALS["pdo"]->query($sql);
-
-                                    $row = $result->fetch(PDO::FETCH_ASSOC);
-
-                                    $longitude = $row['longitude'];
-                                    $latitude = $row['latitude'];
-                                    $heure = $row['heure'];
-                                    ?>
-
-                                    <div id="map" style="height: 470px;"></div>
-
-                                    <script>
-                                        
-                                        
-                                        var map = L.map('map').setView([<?php echo $latitude; ?>, <?php echo $longitude; ?>], <?php echo $heure; ?>);
-
-                                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                        }).addTo(map);
-
-                                        
-                                                // Ajouter une polyline entre les deux marqueurs
-                                        var polyline = L.polyline([
-                                            [<?php echo $latitude; ?>, <?php echo $longitude; ?>],
-                                            
-                                        ]).addTo(map);
-
-                                        // Ajuster la vue de la carte pour inclure les deux marqueurs et la polyline
-                                        map.fitBounds([
-                                            [<?php echo min($latitude, $latitude2, $latitude3, $latitude4, $latitude5); ?>, <?php echo min($longitude, $longitude2, $longitude3, $longitude4, $longitude5); ?>],
-                                            [<?php echo max($latitude, $latitude2, $latitude3, $latitude4, $latitude5); ?>, <?php echo max($longitude, $longitude2, $longitude3, $longitude4, $longitude5); ?>]
-                                        ]);
-
-
-                                     // Define an array to store coordinates
-                                        let coordinatesArray = [];
-                                        
-
-                                        function updateMap() {
-                                            // Make a fetch request to get updated data
-                                            fetch('http://192.168.64.148/projetgps/main_pages/data.php')
-                                                .then(response => response.json())
-                                                .then(data => {
-                                                    console.log('Received data:', data);
-
-                                                    // Update marker position
-                                                    L.marker([data.latitude, data.longitude]).addTo(map)
-                                                        .bindPopup('vous etes ici.')
-                                                        .openPopup();
-
-                                                    // Add the new coordinates to the array
-                                                    coordinatesArray.push([data.latitude, data.longitude]);
-
-                                                    // Clear existing polyline
-                                                    if (polyline) {
-                                                        map.removeLayer(polyline);
-                                                    }
-
-                                                    // Create a new polyline with all coordinates
-                                                    polyline = L.polyline(coordinatesArray, { color: 'blue', weight: 3, opacity: 0.7 }).addTo(map);
-
-                                                    // Pan the map to the new location
-                                                    map.panTo([data.latitude, data.longitude]);
-                                                })
-                                                .catch(error => console.error('Error fetching data:', error));
-                                        }
-
-                                    // Uncomment the line below to refresh the map every 5 seconds
-                                    setInterval(updateMap, 5000);
-
-
-
-
-
-                                    </script>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        
-                        
-
-                    
-
-                </div>
-                <!-- /.container-fluid -->
-
+                <fieldset id="adressLum">
+                    <label for="adress">Adresse Lumière</label>
+                    <input type="range" min="1" max="510" id="adress" step="1" value="0">
+                    <output for="adress" id="adress_out">1</output>
+                </fieldset>
             </div>
             <!-- End of Main Content -->
 
@@ -384,17 +204,8 @@ if (isset($_POST['deconnexion'])) {
 
     <!-- Custom scripts for all pages-->
     <script src="../assets//js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="../assets//vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="../assets//js/demo/chart-area-demo.js"></script>
-    <script src="../assets//js/demo/chart-pie-demo.js"></script>
-
-    <script src="../assets/js/demo/APImap.js"></script>
     
-
+    <script src="../assets/js/websocket.js"></script>
 </body>
 
 </html>

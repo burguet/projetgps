@@ -1,7 +1,7 @@
 <?php
 
-$ipserver = "192.168.65.9"; // A modifier si vous travaillez chez vous
-$bdd = "trgps";
+$ipserver = "192.168.64.213"; // A modifier si vous travaillez chez vous
+$bdd = "BASE_ProjetDMX";
 $login_bdd = "root";
 $password = "root";
 
