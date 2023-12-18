@@ -34,7 +34,7 @@ if (isset($_POST['inscription'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PROJET GPS - Inscription</title>
+    <title>PROJET DMX - Inscription</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

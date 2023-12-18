@@ -57,7 +57,7 @@ class User
 
 
     // 2) Inscription d'un user
-    public function Inscription($login, $passwd, $isAdmin = 0)
+    public function Inscription($login, $passwd)
     {
         // Vérifier si le login existe pas déjà
         $sql = "SELECT * FROM User WHERE login = '" . $login . "'";
@@ -69,7 +69,7 @@ class User
         }
 
         // Insérer le nouvel user dans la BDD
-        $sql = "INSERT INTO User (login, passwd, isAdmin) VALUES ('$login', '$passwd', $isAdmin)";
+        $sql = "INSERT INTO User (login, passwd) VALUES ('$login', '$passwd')";
 
         if ($GLOBALS["pdo"]->exec($sql) !== false) {
             return true; // Inscription réussie

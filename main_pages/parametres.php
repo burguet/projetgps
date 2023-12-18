@@ -51,7 +51,7 @@ if (isset($_POST['deconnexion'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GPS - Votre compte</title>
+    <title>DMX - Votre compte</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -74,7 +74,7 @@ if (isset($_POST['deconnexion'])) {
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">PROJET <sup>GPS</sup></div>
+                <div class="sidebar-brand-text mx-3">PROJET <sup>DMX</sup></div>
             </a>
 
             <!-- Nav Item - Accueil -->
@@ -234,7 +234,7 @@ if (isset($_POST['deconnexion'])) {
                         <footer class="sticky-footer bg-white">
                             <div class="container my-auto">
                                 <div class="copyright text-center my-auto">
-                                    <span>Copyright &copy; PROJET GPS</span>
+                                    <span>Copyright &copy; PROJET DMX</span>
                                 </div>
                             </div>
                         </footer>
