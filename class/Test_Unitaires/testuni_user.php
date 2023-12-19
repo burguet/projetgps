@@ -9,7 +9,7 @@ $pdo = new PDO('mysql:host=192.168.64.213; dbname=BASE_ProjetDMX', 'root', 'root
 $user = new User(null,"TEST","UNITAIRE",null);
 
 $resultInscription = $user->Inscription('new_user', 'new_password');
-echo "Test d'Inscription : " . ($resultInscription === true ? "Réussi" : $resultInscription ."\n" );
+echo "Test d'Inscription : " . ($resultInscription === true ? "Réussi" : $resultInscription);
 ?> <br> <?php
 
 $resultAutorisation = $user->Autorisation('new_user', 'new_password');
@@ -17,15 +17,15 @@ echo "Test d'Autorisation : " . ($resultAutorisation === true ? "Réussi" : "Éc
 ?> <br> <?php
 
 $resultModifierUser = $user->ModifierUser('new_user', 'modified_user', 'modified_password');
-echo "Test de ModifierUser : " . ($resultModifierUser === true ? "Réussi" : $resultModifierUser) . "\n";
+echo "Test de ModifierUser : " . ($resultModifierUser === true ? "Réussi" : $resultModifierUser);
 ?> <br> <?php
 
 $resultSupprimerUser = $user->SupprimerUser('modified_user');
-echo "Test de SupprimerUser : " . ($resultSupprimerUser === true ? "Réussi" : $resultSupprimerUser) . "\n";
+echo "Test de SupprimerUser : " . ($resultSupprimerUser === true ? "Réussi" : $resultSupprimerUser);
 ?> <br> <?php
 
 $resultDeconnexion = $user->Deconnexion();
-echo "Test de Deconnexion : " . ($resultDeconnexion === true ? "Réussi" : "Échoué") . "\n";
+echo "Test de Deconnexion : " . ($resultDeconnexion === true ? "Réussi" : "Échoué");
 ?> <br> <?php
 
 
