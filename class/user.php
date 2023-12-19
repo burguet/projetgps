@@ -15,10 +15,7 @@ class User
         $this->isAdmin = $isAdmin;
     }
 
-
     // -- Méthodes : accès aux propriétés --
-
-
     public function getId()
     { // Retourne l'Id 
         return $this->id;
@@ -41,22 +38,9 @@ class User
 
 
     // -- Méthodes : fonctions pour interagir avec l'user --
+    
 
-
-    // 1) Connexion à la BDD
-    public function Connexion($user, $passwd, $bdd)
-    {
-        try {
-            // Tente la connexion à la BDD
-            $pdo = new PDO('mysql:host=' . $GLOBALS["ipserver"] . ';dbname=' . $bdd, $user, $passwd);
-            return true; // Connexion réussie
-        } catch (PDOException $error) {
-            return "Erreur de connexion à la base de données : " . $error->getMessage();
-        }
-    }
-
-
-    // 2) Inscription d'un user
+    // 1) Inscription d'un user
     public function Inscription($login, $passwd)
     {
         // Vérifier si le login existe pas déjà
@@ -79,7 +63,7 @@ class User
     }
 
 
-    // 3) Autorisation pour que l'user accès au site + vérification s'il est Admin ou pas
+    // 2) Autorisation pour que l'user accès au site + vérification s'il est Admin ou pas
     public function Autorisation($login, $passwd)
     {
         // Recherche de l'user dans la BDD avec le login
@@ -113,7 +97,7 @@ class User
     }
 
 
-    // 4) Modifier un user
+    // 3) Modifier un user
     public function ModifierUser($login, $nouveauLogin, $nouveauPasswd)
     {
         $sql = "UPDATE User SET login = '$nouveauLogin', passwd = '$nouveauPasswd' WHERE login = '$login'"; // Requête pour modifier login + mdp
@@ -126,7 +110,7 @@ class User
     }
 
 
-    // 5) Supprimer un user
+    // 4) Supprimer un user
     public function SupprimerUser($login)
     {
         $sql = "DELETE FROM User WHERE login = '$login'";
@@ -139,7 +123,7 @@ class User
     }
 
 
-    // 6) Déconnecter l'user
+    // 5) Déconnecter l'user
     public function Deconnexion()
     {
         session_unset();
@@ -153,7 +137,7 @@ class User
     }
 
 
-    // 7) Afficher tous les users dans un tableau sur la page admin
+    // 6) Afficher tous les users dans un tableau sur la page admin
     public function AfficherTableauUtilisateurs()
     {
         $sql = "SELECT login, passwd FROM User"; // On récupère tous les users de la BDD
@@ -193,7 +177,7 @@ class User
     }
 
 
-    // 8) Afficher juste son user dans les paramètres
+    // 7) Afficher juste son user dans les paramètres
     public function AfficherSingleUser()
     {
         $login = $_SESSION['id_utilisateur']; // On récupère le login de l'user connecté

@@ -3,7 +3,7 @@ var path = window.location.pathname;
 // Récupère le nom du fichier HTML
 var page = path.split("/").pop();
 // Création du websocket
-const socket = new WebSocket('ws://192.168.64.91:12345');
+const socket = new WebSocket('ws://192.168.64.91:12346');
 // Définition du status
 const statusSocket = document.getElementById('status');
 // Réponse JSON
@@ -99,8 +99,8 @@ if (page == "accueil.php")
   socket.addEventListener('open', () => {
     statusSocket.innerHTML = "Status : Connecter !";
 
-    // Appeler requestUser toutes les 1000 ms (1 seconde)
-    intervalID = setInterval(requestUser, 50);
+    // Appeler requestUser toutes les 50 ms
+    intervalID = setInterval(requestUser, 1000);
   });
 
   /* SI  ON SOUHAITE RECEVOIR DES DONNEES

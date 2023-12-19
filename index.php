@@ -24,7 +24,6 @@ if (isset($_POST['connexion'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,7 +76,7 @@ if (isset($_POST['connexion'])) {
                                         id="login" name="login" placeholder="Entrez votre Login..." required>
                                 </div>
 
-                            <!-- Rentrer le Mot de Passe -->
+                            <!-- Rentrers le Mot de Passe -->
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-user"
                                         id="passwd" name="passwd" placeholder="Entrez votre Mot de Passe..." required>
