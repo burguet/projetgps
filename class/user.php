@@ -97,7 +97,7 @@ class User
     {
         $sql = "UPDATE User SET login = '$nouveauLogin', passwd = '$nouveauPasswd' WHERE login = '$login'";
         if ($GLOBALS["pdo"]->exec($sql) !== false) {
-            echo '<script>setTimeout(function(){ window.location = "admin.php"; }, 2000);</script>';
+            // echo '<script>setTimeout(function(){ window.location = "admin.php"; }, 2000);</script>'; // à mettre en commentaire pour test unitaire
             return true; 
         } else {
             return "Erreur lors de la modification de l'utilisateur.";
@@ -110,7 +110,7 @@ class User
     {
         $sql = "DELETE FROM User WHERE login = '$login'";
         if ($GLOBALS["pdo"]->exec($sql) !== false) {
-            echo '<script>setTimeout(function(){ window.location = "admin.php"; }, 2000);</script>';
+            // echo '<script>setTimeout(function(){ window.location = "admin.php"; }, 2000);</script>'; // à mettre en commentaire pour test unitaire
             return true; 
         } else {
             return "Erreur lors de la suppression de l'utilisateur.";
