@@ -1,14 +1,15 @@
 <?php
 
+// Class User
+
 class User
-{ // Création de la Classe User
+{ 
     private $id;
     private $login;
     private $passwd;
     private $isAdmin;
 
-    public function __construct($id, $login, $passwd, $isAdmin) // Constructeur
-    { 
+    public function __construct($id, $login, $passwd, $isAdmin){
         $this->id = $id;
         $this->login = $login;
         $this->passwd = $passwd;
@@ -16,23 +17,24 @@ class User
     }
 
     // -- Méthodes : accès aux propriétés --
+
     public function getId()
-    { // Retourne l'Id 
+    { 
         return $this->id;
     }
 
     public function getLogin()
-    { // Retourne le login 
+    { 
         return $this->login;
     }
 
     public function getPasswd()
-    { // Retourne le password 
+    { 
         return $this->passwd;
     }
 
     public function getisAdmin()
-    { // Retourne le isAdmin
+    { 
         return $this->isAdmin;
     }
 
@@ -43,20 +45,17 @@ class User
     // 1) Inscription d'un user
     public function Inscription($login, $passwd)
     {
-        // Vérifier si le login existe pas déjà
         $sql = "SELECT * FROM User WHERE login = '" . $login . "'";
         $result = $GLOBALS["pdo"]->query($sql);
 
-        // Vérification si personne n'a le même login que celui rentré 
         if ($result && $result->rowCount() > 0) {
             return "Un utilisateur avec le même login existe déjà.";
         }
 
-        // Insérer le nouvel user dans la BDD
         $sql = "INSERT INTO User (login, passwd) VALUES ('$login', '$passwd')";
 
         if ($GLOBALS["pdo"]->exec($sql) !== false) {
-            return true; // Inscription réussie
+            return true; 
         } else {
             return "Erreur lors de l'inscription.";
         }
@@ -66,44 +65,40 @@ class User
     // 2) Autorisation pour que l'user accès au site + vérification s'il est Admin ou pas
     public function Autorisation($login, $passwd)
     {
-        // Recherche de l'user dans la BDD avec le login
         $sql = "SELECT * FROM User WHERE login = '" . $login . "'";
         $result = $GLOBALS["pdo"]->query($sql);
 
         if ($result && $result->rowCount() > 0) {
-            // L'user existe, vérifie le mot de passe
+            // L'user existe, vérifie mdp
             $sql = "SELECT * FROM User WHERE login = '" . $login . "' AND passwd = '" . $passwd . "'";
             $result = $GLOBALS["pdo"]->query($sql);
 
             if ($result && $result->rowCount() > 0) {
-                // Authentification réussie
                 $userData = $result->fetch(PDO::FETCH_ASSOC);
 
                 // Stocker le nom d'user dans la session
                 $_SESSION['id_user'] = $userData['login'];
 
-                // Si l'user est Admin dans la BDD
+                // User = Admin ? 
                 if ($userData['isAdmin'] == 1) {
-                    // On définit une variable dans la SESSION
                     $_SESSION['isAdmin'] = 1;
                 } else {
-                    // Sinon c'est un user normal
                     $_SESSION['isAdmin'] = 0;
                 }
                 return true;
             }
         }
-        return false; // Authentification échouée
+        return false; 
     }
 
 
-    // 3) Modifier un user
+    // 3) Modifier un user (login + mdp)
     public function ModifierUser($login, $nouveauLogin, $nouveauPasswd)
     {
-        $sql = "UPDATE User SET login = '$nouveauLogin', passwd = '$nouveauPasswd' WHERE login = '$login'"; // Requête pour modifier login + mdp
+        $sql = "UPDATE User SET login = '$nouveauLogin', passwd = '$nouveauPasswd' WHERE login = '$login'";
         if ($GLOBALS["pdo"]->exec($sql) !== false) {
             echo '<script>setTimeout(function(){ window.location = "admin.php"; }, 2000);</script>';
-            return true; // Modification réussie
+            return true; 
         } else {
             return "Erreur lors de la modification de l'utilisateur.";
         }
@@ -116,7 +111,7 @@ class User
         $sql = "DELETE FROM User WHERE login = '$login'";
         if ($GLOBALS["pdo"]->exec($sql) !== false) {
             echo '<script>setTimeout(function(){ window.location = "admin.php"; }, 2000);</script>';
-            return true; // Suppression réussie
+            return true; 
         } else {
             return "Erreur lors de la suppression de l'utilisateur.";
         }
@@ -128,9 +123,8 @@ class User
     {
         session_unset();
         session_destroy();
-        return true; // Déconnexion réussie
+        return true; 
 
-        // Supprime également le cookie de session
         if (isset($_COOKIE[session_name()])) {
             setcookie(session_name(), '', time() - 3600, '/');
         }
@@ -140,18 +134,19 @@ class User
     // 6) Afficher tous les users dans un tableau sur la page admin
     public function AfficherTableauUtilisateurs()
     {
-        $sql = "SELECT login, passwd FROM User"; // On récupère tous les users de la BDD
+        $sql = "SELECT login, passwd FROM User"; 
         $result = $GLOBALS["pdo"]->query($sql);
 
-        if ($result && $result->rowCount() > 0) { // Config pour le tableau
+        // Tableau d'affichage
+        if ($result && $result->rowCount() > 0) { 
             echo '<div class="table-responsive">';
             echo '<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">';
             echo '<thead>';
             echo '<tr>';
-            echo '<th>Login</th>'; // Login
-            echo '<th>Password</th>'; // Password
-            echo '<th></th>'; // Modifier
-            echo '<th></th>'; // Supprimer
+            echo '<th>Login</th>'; 
+            echo '<th>Password</th>'; 
+            echo '<th></th>'; 
+            echo '<th></th>'; 
             echo '</tr>';
             echo '</thead>';
             echo '<tfoot>';
@@ -182,16 +177,16 @@ class User
     {
         $login = $_SESSION['id_utilisateur']; // On récupère le login de l'user connecté
 
-        $sql = "SELECT login, passwd FROM User WHERE login = '$login'"; // On va chercher ses infos
+        $sql = "SELECT login, passwd FROM User WHERE login = '$login'"; 
         $result = $GLOBALS["pdo"]->query($sql);
 
-        // On affiche tout ça dans un tableau
+        // Tableau d'affichage
         echo '<div class="table-responsive">';
         echo '<table class="table table-bordered" width="100%" cellspacing="0">';
         echo '<thead>';
         echo '<tr>';
-        echo '<th>Login</th>'; // Login
-        echo '<th>Password</th>'; // Password
+        echo '<th>Login</th>'; 
+        echo '<th>Password</th>'; 
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
