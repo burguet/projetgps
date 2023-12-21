@@ -3,23 +3,19 @@ session_start();
 include("../bdd/bdd.php");
 include("../class/user.php");
 
-// $id_utilisateur = $_SESSION['id_utilisateur'];
 $login = $_SESSION['id_utilisateur'];
 $isAdmin = $_SESSION['isAdmin'];
 
-// L'exit est rajouté à chaque fin de "if" pour éviter que le reste de code ne s'exécute intentionnellement si la condition
-// n'est pas remplie.
-
-// Vérifier si l'utilisateur est connecté via la session
+// Vérif si user connecté
 if (!isset($_SESSION['id_utilisateur'])) {
     header('location: ../index.php');
     exit;
 }
 
-// Si l'utilisateur souhaite se déconnecter
+// Appel fonction Deconnexion
 if (isset($_POST['deconnexion'])) {
-    User::Deconnexion(); // Appel de la fonction "Deconnexion" dans la Class User
-    header('location: ../index.php'); // Redirection vers la page de connexion
+    User::Deconnexion();
+    header('location: ../index.php');
     exit;
 }
 ?>

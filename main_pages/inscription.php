@@ -3,14 +3,13 @@ session_start();
 include "../bdd/bdd.php";
 include "../class/user.php";
 
-$message; // Variable utilisée en cas d'erreur(s)
+$message; // Variable en cas d'erreur(s)
 
-// Traitement du formulaire d'inscription
+// Appel fonction Inscription
 if (isset($_POST['inscription'])) {
     $login = $_POST['new_login'];
     $passwd = $_POST['new_passwd'];
 
-    // On effectue l'inscription en utilisant la fonction "Inscription" de la Class User
     $result = User::Inscription($login, $passwd);
 
     if ($result === true) {
@@ -27,7 +26,6 @@ if (isset($_POST['inscription'])) {
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,7 +40,6 @@ if (isset($_POST['inscription'])) {
 
     <!-- Custom styles for this template-->
     <link href="../assets//css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
 
 <body class="bg-gradient-primary">

@@ -3,26 +3,22 @@ session_start();
 include("../bdd/bdd.php");
 include("../class/user.php");
 
-// $id_utilisateur = $_SESSION['id_utilisateur'];
 $login = $_SESSION['id_utilisateur'];
 $isAdmin = $_SESSION['isAdmin'];
 
-// L'exit est rajouté à chaque fin de "if" pour éviter que le reste de code ne s'exécute intentionnellement si la condition
-// n'est pas remplie.
-
-// Vérifier si l'utilisateur est connecté via la session
+// Vérif si user connecté
 if (!isset($_SESSION['id_utilisateur'])) {
     header('location: ../index.php');
     exit;
 }
 
-// Vérifier si l'utilisateur a un compte administrateur (isAdmin = 1)
+// User = non Admin = redirection
 if ($_SESSION['isAdmin'] != 1) {
-    header('location: 404.php'); // Rediriger vers la page d'erreur 404.php
+    header('location: 404.php'); 
     exit;
 }
 
-// Pour modifier les informations d'un user
+// Appel fonction ModifierUser
 if (isset($_POST['modifier'])) {
     $loginToModify = $_POST['loginToModify'];
     $newLogin = $_POST['newLogin'];
@@ -30,16 +26,16 @@ if (isset($_POST['modifier'])) {
     User::ModifierUser($loginToModify, $newLogin, $newPasswd);
 }
 
-// Pour supprimer un user
+// Appel fonction SupprimerUser
 if (isset($_POST['supprimer'])) {
     $loginToDelete = $_POST['loginToDelete'];
     User::SupprimerUser($loginToDelete);
 }
 
-// Si l'utilisateur souhaite se déconnecter
+// Appel fonction Deconnexion
 if (isset($_POST['deconnexion'])) {
-    User::Deconnexion(); // Appel de la fonction "Deconnexion" dans la Class User
-    header('location: ../index.php'); // Redirection vers la page de connexion
+    User::Deconnexion(); 
+    header('location: ../index.php'); 
     exit;
 }
 ?>
