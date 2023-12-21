@@ -3,18 +3,16 @@ session_start();
 include "bdd/bdd.php";
 require "class/user.php";
 
-$message; // Variable utilisée en cas d'erreur(s)
+$message; // Variable en cas d'erreur(s)
 
+// Appel méthode "Connexion"
 if (isset($_POST['connexion'])) {
     $login = $_POST['login'];
     $passwd = $_POST['passwd'];
 
-    // Vérifier l'authentification
     if (User::Autorisation($login, $passwd)) {
-        // Stocker l'ID de l'utilisateur dans la session
         $_SESSION['id_utilisateur'] = $login;
 
-        // Redirection de l'utilisateur vers la page d'accueil
         header('location: main_pages/accueil.php');
         exit();
     } 
@@ -34,7 +32,7 @@ if (isset($_POST['connexion'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GPS - Connexion</title>
+    <title>DMX - Connexion</title>
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

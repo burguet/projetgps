@@ -12,7 +12,7 @@ if (!isset($_SESSION['id_utilisateur'])) {
     exit;
 }
 
-// Appel fonction ModifierUser
+// Appel méthode "ModifierUser"
 if (isset($_POST['modifier'])) {
     $loginToModify = $_POST['loginToModify'];
     $newLogin = $_POST['newLogin'];
@@ -20,7 +20,7 @@ if (isset($_POST['modifier'])) {
     User::ModifierUser($loginToModify, $newLogin, $newPasswd);
 }
 
-// Appel fonction SupprimerUser 
+// Appel méthode "SupprimerUser"
 if (isset($_POST['supprimer'])) {
     $loginToDelete = $_POST['loginToDelete'];
     User::SupprimerUser($loginToDelete);
@@ -28,7 +28,7 @@ if (isset($_POST['supprimer'])) {
 
 }
 
-// Appel fonction Deconnexion
+// Appel méthode "Deconnexion"
 if (isset($_POST['deconnexion'])) {
     User::Deconnexion(); 
     header('location: ../index.php');
@@ -167,7 +167,7 @@ if (isset($_POST['deconnexion'])) {
                             </div>
                             <div class="card-body">
                                 <?php
-                                User::AfficherSingleUser(); // Appel de la fonction pour afficher les informations de l'userconnecté
+                                User::AfficherSingleUser(); // Appel de la méthode pour afficher les informations de l'userconnecté
                                 ?>
                             </div>
 

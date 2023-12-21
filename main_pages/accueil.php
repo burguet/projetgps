@@ -12,7 +12,7 @@ if (!isset($_SESSION['id_utilisateur'])) {
     exit;
 }
 
-// Appel fonction Deconnexion
+// Appel méthode "Deconnexion"
 if (isset($_POST['deconnexion'])) {
     User::Deconnexion(); 
     header('location: ../index.php'); 

@@ -5,7 +5,7 @@ include "../class/user.php";
 
 $message; // Variable en cas d'erreur(s)
 
-// Appel fonction Inscription
+// Appel méthode "Inscription"
 if (isset($_POST['inscription'])) {
     $login = $_POST['new_login'];
     $passwd = $_POST['new_passwd'];
@@ -32,7 +32,7 @@ if (isset($_POST['inscription'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PROJET DMX - Inscription</title>
+    <title>DMX - Inscription</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
