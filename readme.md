@@ -67,6 +67,7 @@ Base_ProjetDMX
         - *pageadministrateur.PNG*
         - *pageconnexion.PNG*
         - *pageinscription.PNG*
+        - *sequence DMXC++.jpg*
 
 
 * __./main_pages__  
