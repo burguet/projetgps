@@ -29,7 +29,7 @@ if (isset($_POST['modifier'])) {
 // Appel méthode "SupprimerUser"
 if (isset($_POST['supprimer'])) {
     $loginToDelete = $_POST['loginToDelete'];
-    User::SupprimerUser($loginToDelete);
+    User::SupprimerAdmin($loginToDelete);
 }
 
 // Appel méthode "Deconnexion"

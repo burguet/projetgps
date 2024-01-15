@@ -111,14 +111,28 @@ class User
         $sql = "DELETE FROM User WHERE login = '$login'";
         if ($GLOBALS["pdo"]->exec($sql) !== false) {
             // echo '<script>setTimeout(function(){ window.location = "admin.php"; }, 2000);</script>'; // à mettre en commentaire pour test unitaire
+            session_unset();
+            session_destroy();
+            header('location: ../index.php');
             return true; 
         } else {
             return "Erreur lors de la suppression de l'utilisateur.";
         }
     }
 
+    // 5) Supprimer un user via le panneau admin
+    public function SupprimerAdmin($login)
+    {
+        $sql = "DELETE FROM User WHERE login = '$login'";
+        if ($GLOBALS["pdo"]->exec($sql) !== false) {
+            // echo '<script>setTimeout(function(){ window.location = "admin.php"; }, 2000);</script>'; // à mettre en commentaire pour test unitaire
+            return true; 
+        } else {
+            return "Erreur lors de la suppression de l'utilisateur.";
+        }
+    }
 
-    // 5) Déconnecter l'user
+    // 6) Déconnecter l'user
     public function Deconnexion()
     {
         session_unset();
@@ -131,7 +145,7 @@ class User
     }
 
 
-    // 6) Afficher tous les users dans un tableau sur la page admin
+    // 7) Afficher tous les users dans un tableau sur la page admin
     public function AfficherTableauUtilisateurs()
     {
         $sql = "SELECT login, passwd FROM User"; 
@@ -172,7 +186,7 @@ class User
     }
 
 
-    // 7) Afficher juste son user dans les paramètres
+    // 8) Afficher juste son user dans les paramètres
     public function AfficherSingleUser()
     {
         $login = $_SESSION['id_utilisateur']; // On récupère le login de l'user connecté
