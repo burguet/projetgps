@@ -53,7 +53,9 @@ Base_ProjetDMX
 
 * __./class__  
     *user.php* -> code pour la déclaration de la Class "User", contenant les fonctions principales pour gérer celui-ci  
-    /Test_Unitaire
+    /tests_unitaires  
+        - *testuni_user.php*  
+      
 
 * __./documentation__  
   - *cahier_des_charges.pdf*
@@ -76,8 +78,7 @@ Base_ProjetDMX
     *admin.php* -> page de gestion si l'user est Admin qui lui permet d'afficher et de modifier
  tous les utilisateurs    
     *inscription.php* -> page d'inscription pour les nouveaux utilisateurs    
-    *parametres.php* -> page sur laquelle l'user connecté peut modifier ses informations de connexion
-    *admin.php*->page de gestion des compte pour l'admin
+    *parametres.php* -> page sur laquelle l'user connecté peut modifier ses informations de connexion  
 
 
 * __./qtDMXWebsocketServer__  
