@@ -1,4 +1,4 @@
-# PROJET GPS
+ # PROJET GPS
 
 ![Petit meme](https://i.imgflip.com/1n8nsf.jpg)
 
@@ -53,27 +53,36 @@ Base_ProjetDMX
 
 * __./class__  
     *user.php* -> code pour la déclaration de la Class "User", contenant les fonctions principales pour gérer celui-ci  
-
+    /Test_Unitaire
 
 * __./documentation__  
-    /img  
-        - *Recette et test.pdf*   
+    /img   
         - *cahier des charges.pdf*    
-        - *diagrammeclassC.pdf*  
-        - *diagrammeclassphp.pdf*     
-        - *ganttPrevi.pdf*   
-        - *ganttTP2Reel.pdf*     
-        - *useCaseGPS.png*   
+        - *class.jpg*
+        - *exigence DMX.jpg*     
+        - *gantdmxprevi.pdf*   
+        - *gantdmxreel.pdf*     
+        - *MCD.PNG*
+        - *Use_Case.jpg*
+        - *pageadministrateur.PNG*
+        - *pageconnexion.PNG*
+        - *pageinscription.PNG*
 
 
 * __./main_pages__  
     *404.php* -> page utilisée quand on accède à une page non autorisée ou non trouvée     
     *acceuil.php* -> page quand l'utilisateur se connecte et permet d'accéder aux autres pages    
-    *admin.php* -> page de gestion si l'user est Admin qui lui permet d'afficher et de modifier tous les utilisateurs    
+    *admin.php* -> page de gestion si l'user est Admin qui lui permet d'afficher et de modifier
+ tous les utilisateurs    
     *inscription.php* -> page d'inscription pour les nouveaux utilisateurs    
-    *parametres.php* -> page sur laquelle l'user connecté peut modifier ses informations de connexion  
+    *parametres.php* -> page sur laquelle l'user connecté peut modifier ses informations de connexion
+    *admin.php*->page de gestion des compte pour l'admin
 
 
+* __./qtDMXWebsocketServer__  
+    /qtDMXWebsocket 
+    *qtDMXWebsocket.sln*->fichier de visual studio
+    
 *index.php* -> page servant pour la connexion de l'utilisateur  
 *readme.md*
 
