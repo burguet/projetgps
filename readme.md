@@ -8,7 +8,7 @@ Le projet peut être accessible via 2 IP :
     - __192.168.64.84__, l'adresse sur laquelle vous pouvez accéder au site.  
     - __192.168.64.213__, l'adresse sur laquelle vous pouvez accéder à la BDD.
 
-Un partage Samba existe et est joignable au lecteur suivant : \\192.168.64.84\SenepartProject\var\html\QTDMXWEB
+Un partage Samba existe et est joignable au lecteur suivant : \\192.168.64.84\SenepartProject\var\html\projetgps
 
 
 -----------------
