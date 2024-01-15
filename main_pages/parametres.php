@@ -72,7 +72,7 @@ if (isset($_POST['deconnexion'])) {
                 <div class="sidebar-brand-text mx-3">PROJET <sup>DMX</sup></div>
             </a>
 
-            <!-- Nav Item - Accueil -->
+            <!-- Nav Item - Accueil --> // teste
             <li class="nav-item">
                 <a class="nav-link" href="accueil.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
