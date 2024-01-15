@@ -80,7 +80,7 @@ Base_ProjetDMX
 
 
 * __./qtDMXWebsocketServer__  
-    /qtDMXWebsocket
+    /qtDMXWebsocket 
     *qtDMXWebsocket.sln*->fichier de visual studio
     
 *index.php* -> page servant pour la connexion de l'utilisateur  
