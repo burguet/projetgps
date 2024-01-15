@@ -25,7 +25,6 @@ if (isset($_POST['supprimer'])) {
     $loginToDelete = $_POST['loginToDelete'];
     User::SupprimerUser($loginToDelete);
     User::Deconnexion();
-
 }
 
 // Appel méthode "Deconnexion"
@@ -66,7 +65,7 @@ if (isset($_POST['deconnexion'])) {
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="acceuil.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="accueil.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
