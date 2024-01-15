@@ -92,7 +92,7 @@ class User
     }
 
 
-    // 3) Modifier un user (login + mdp)
+    // 3) Modifier un user
     public function ModifierUser($login, $nouveauLogin, $nouveauPasswd)
     {
         $sql = "UPDATE User SET login = '$nouveauLogin', passwd = '$nouveauPasswd' WHERE login = '$login'";
@@ -121,7 +121,7 @@ class User
     }
 
     // 5) Supprimer un user via le panneau admin
-    public function SupprimerAdmin($login)
+    public function SupprimerUserAdmin($login)
     {
         $sql = "DELETE FROM User WHERE login = '$login'";
         if ($GLOBALS["pdo"]->exec($sql) !== false) {
@@ -152,30 +152,33 @@ class User
         $result = $GLOBALS["pdo"]->query($sql);
 
         // Tableau d'affichage
-        if ($result && $result->rowCount() > 0) { 
-            echo '<div class="table-responsive">';
-            echo '<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">';
-            echo '<thead>';
-            echo '<tr>';
-            echo '<th>Login</th>'; 
-            echo '<th>Password</th>'; 
-            echo '<th></th>'; 
-            echo '<th></th>'; 
-            echo '</tr>';
-            echo '</thead>';
-            echo '<tfoot>';
-            echo '<tr>';
-            echo '</tr>';
-            echo '</tfoot>';
-            echo '<tbody>';
+        if ($result && $result->rowCount() > 0) { ?>
+            <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+            <tr>
+            <th>Login</th>
+            <th>Password</th>
+            <th></th> 
+            <th></th> 
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+            </tr>
+            </tfoot>
+            <tbody>
 
+            <?php
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                echo '<tr>';
-                echo '<td>' . $row['login'] . '</td>';
-                echo '<td>' . $row['passwd'] . '</td>';
-                echo '<td><button class="btn btn-primary" data-toggle="modal" data-target="#modifierModal" data-login="' . $row['login'] . '">Modifier</button></td>';
-                echo '<td><button class="btn btn-danger" data-toggle="modal" data-target="#supprimerModal" data-login="' . $row['login'] . '">Supprimer</button></td>';
-                echo '</tr>';
+                ?>
+                <tr>
+                <td><?php echo $row['login'] ?></td>
+                <td><?php echo $row['passwd'] ?></td>
+                <td><button class="btn btn-primary" data-toggle="modal" data-target="#modifierModal" data-login=" <?php echo $row['login'] ?> ">Modifier</button></td>
+                <td><button class="btn btn-danger" data-toggle="modal" data-target="#supprimerModal" data-login=" <?php echo $row['login'] ?> ">Supprimer</button></td>
+                </tr>
+                <?php
             }
             echo '</tbody>';
             echo '</table>';
@@ -195,23 +198,27 @@ class User
         $result = $GLOBALS["pdo"]->query($sql);
 
         // Tableau d'affichage
-        echo '<div class="table-responsive">';
-        echo '<table class="table table-bordered" width="100%" cellspacing="0">';
-        echo '<thead>';
-        echo '<tr>';
-        echo '<th>Login</th>'; 
-        echo '<th>Password</th>'; 
-        echo '</tr>';
-        echo '</thead>';
-        echo '<tbody>';
+        ?>
+        <div class="table-responsive">
+        <table class="table table-bordered" width="100%" cellspacing="0">
+        <thead>
+        <tr>
+        <th>Login</th> 
+        <th>Password</th>
+        </tr>
+        </thead>
+        <tbody>
 
+        <?php
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            echo '<tr>';
-            echo '<td>' . $row['login'] . '</td>';
-            echo '<td>' . $row['passwd'] . '</td>';
-            echo '<td><button class="btn btn-primary" data-toggle="modal" data-target="#modifierModal" data-login="' . $row['login'] . '">Modifier</button></td>';
-            echo '<td><button class="btn btn-danger" data-toggle="modal" data-target="#supprimerModal" data-login="' . $row['login'] . '">Supprimer</button></td>';
-            echo '</tr>';
+            ?>
+            <tr>
+            <td><?php echo $row['login'] ?></td>
+            <td><?php echo $row['passwd'] ?></td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#modifierModal" data-login=" <?php echo $row['login'] ?> ">Modifier</button></td>
+            <td><button class="btn btn-danger" data-toggle="modal" data-target="#supprimerModal" data-login=" <?php echo $row['login'] ?> ">Supprimer</button></td>
+            </tr>
+            <?php
         }
         echo '</tbody>';
         echo '</table>';

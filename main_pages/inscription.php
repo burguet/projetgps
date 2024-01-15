@@ -7,6 +7,7 @@ $message; // Variable en cas d'erreur(s)
 
 // Appel méthode "Inscription"
 if (isset($_POST['inscription'])) {
+    if($_POST['new_passwd']==$_POST['confpass']){
     $login = $_POST['new_login'];
     $passwd = $_POST['new_passwd'];
 
@@ -18,6 +19,7 @@ if (isset($_POST['inscription'])) {
     } else {
         $message = "Erreur d'inscription : $result";
     }
+}
 }
 ?>
 
@@ -71,7 +73,7 @@ if (isset($_POST['inscription'])) {
                                     </div>
                                     <!-- Confirmer le Mot de Passe -->
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" name="confpass" placeholder="Répétez le Mot de Passe" required>
+                                        <input type="password" class="form-control form-control-user" id="confpass" name="confpass" placeholder="Répétez le Mot de Passe" required>
                                     </div>
                                 </div>
                                 <input type="submit" class="btn btn-primary btn-user btn-block" name="inscription" value="S'incrire">
