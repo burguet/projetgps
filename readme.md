@@ -78,7 +78,8 @@ Base_ProjetDMX
     *parametres.php* -> page sur laquelle l'user connecté peut modifier ses informations de connexion
     *admin.php*->page de gestion des compte pour l'admin
 
-*_./qtDMXWebsocketServer_
+
+* __./qtDMXWebsocketServer__  
     /qtDMXWebsocket
     *qtDMXWebsocket.sln*->fichier de visual studio
     
