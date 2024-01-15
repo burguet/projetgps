@@ -18,7 +18,7 @@ Un partage Samba existe et est joignable au lecteur suivant : \\192.168.64.84\Se
 
 Vous pouvez y accéder grâce au couple d'identifiants root/root.
 
-Base_PROJET     	
+Base_ProjetDMX       	
       
       └── User  
         ├── id : int (clé primaire)  
