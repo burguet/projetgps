@@ -62,12 +62,12 @@ Base_ProjetDMX
         - *exigence DMX.jpg*     
         - *gantdmxprevi.pdf*   
         - *gantdmxreel.pdf*     
-        - *MCD.PNG*
-        - *Use_Case.jpg*
-        - *pageadministrateur.PNG*
-        - *pageconnexion.PNG*
-        - *pageinscription.PNG*
-        - *sequence DMXC++.jpg*
+        - *MCD.PNG*  
+        - *Use_Case.jpg*  
+        - *pageadministrateur.PNG*  
+        - *pageconnexion.PNG*  
+        - *pageinscription.PNG*  
+        - *sequence DMXC++.jpg*  
 
 
 * __./main_pages__  
@@ -81,8 +81,8 @@ Base_ProjetDMX
 
 
 * __./qtDMXWebsocketServer__  
-    /qtDMXWebsocket 
-    *qtDMXWebsocket.sln*->fichier de visual studio
+    /qtDMXWebsocket  
+    *qtDMXWebsocket.sln* -> fichier de visual studio  
     
 *index.php* -> page servant pour la connexion de l'utilisateur  
 *readme.md*
