@@ -56,18 +56,18 @@ Base_ProjetDMX
     /Test_Unitaire
 
 * __./documentation__  
+  - *cahier_des_charges.pdf*
+  - *gantdmxp_revi.pdf*     
+  - *gantdmx_reel.pdf*    
     /img   
-        - *cahier des charges.pdf*    
         - *class.jpg*
-        - *exigence DMX.jpg*     
-        - *gantdmxprevi.pdf*   
-        - *gantdmxreel.pdf*     
+        - *exigenceDMX.jpg*  
         - *MCD.PNG*  
-        - *Use_Case.jpg*  
-        - *pageadministrateur.PNG*  
-        - *pageconnexion.PNG*  
-        - *pageinscription.PNG*  
-        - *sequence DMXC++.jpg*  
+        - *use_case.jpg*  
+        - *page_administrateur.PNG*    
+        - *page_connexion.PNG*  
+        - *page_inscription.PNG*  
+        - *sequenceDMX_C++.jpg*    
 
 
 * __./main_pages__  
