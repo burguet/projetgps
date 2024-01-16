@@ -75,8 +75,8 @@ Base_ProjetDMX
         - *inscription_php.png*  
         - *modifieruser_parametres_php.png*  
         - *seconnecter_php.png*  
-        - *supprimeruser_admin_php.png*
-        - *afficher_tous_comptes_php.png*
+        - *supprimeruser_admin_php.png*  
+        - *afficher_tous_comptes_php.png*  
         - *deconnexion_php.png*  
     
 * __./main_pages__  
