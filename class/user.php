@@ -139,8 +139,9 @@ class User
         session_destroy();
         return true; 
 
+        // Vérifie si cookie toujours présent
         if (isset($_COOKIE[session_name()])) {
-            setcookie(session_name(), '', time() - 3600, '/');
+            setcookie(session_name(), '', time() - 3600, '/'); // Si oui, on le supp a h-1 
         }
     }
 

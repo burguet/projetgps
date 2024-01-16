@@ -99,7 +99,7 @@ if (page == "accueil.php")
   socket.addEventListener('open', () => {
     statusSocket.innerHTML = "Status : Connecter !";
 
-    // Appeler requestUser toutes les 50 ms
+    // Appeler requestUser toutes les 1 ms
     intervalID = setInterval(requestUser, 1000);
   });
 
