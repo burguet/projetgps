@@ -58,10 +58,10 @@ Base_ProjetDMX
       
 
 * __./documentation__  
-  - *cahier_des_charges.pdf*
+  - *cahierdescharges.pdf*
   - *gantdmxp_revi.pdf*     
   - *gantdmx_reel.pdf*    
-    /img   
+    /img  
         - *class.jpg*
         - *exigenceDMX.jpg*  
         - *MCD.PNG*  
@@ -69,9 +69,14 @@ Base_ProjetDMX
         - *page_administrateur.PNG*    
         - *page_connexion.PNG*  
         - *page_inscription.PNG*  
-        - *sequenceDMX_C++.jpg*    
-
-
+          
+    /diagrammes_sequences  
+        - *sequenceDMX_C++.jpg*  
+        - *inscription_php.png*  
+        - *modifieruser_parametres_php.png*  
+        - *seconnecter_php.png*  
+        - *supprimeruser_admin_php.png*  
+    
 * __./main_pages__  
     *404.php* -> page utilisée quand on accède à une page non autorisée ou non trouvée     
     *acceuil.php* -> page quand l'utilisateur se connecte et permet d'accéder aux autres pages    
