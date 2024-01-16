@@ -180,9 +180,11 @@ class User
                 </tr>
                 <?php
             }
-            echo '</tbody>';
-            echo '</table>';
-            echo '</div>';
+            ?>
+            </tbody>
+            </table>
+            </div>
+            <?php
         } else {
             echo 'Aucun utilisateur trouvé.';
         }
@@ -220,8 +222,10 @@ class User
             </tr>
             <?php
         }
-        echo '</tbody>';
-        echo '</table>';
-        echo '</div>';
+        ?>
+        </tbody>
+        </table>
+        </div>
+        <?php
     }
 }

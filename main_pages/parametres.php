@@ -264,5 +264,4 @@ if (isset($_POST['deconnexion'])) {
             <script src="../assets//js/demo/datatables-demo.js"></script>
 
 </body>
-
 </html>
