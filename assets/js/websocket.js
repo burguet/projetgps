@@ -12,11 +12,15 @@ var reponseJSON = null;
 let intervalID;
 
 // Interface
+
+// Affichage val sliders 
 var r = document.querySelector('#r');
 var g = document.querySelector('#g');
 var b = document.querySelector('#b');
 var w = document.querySelector('#w');
 var adress = document.querySelector('#adress');
+
+// Val sliders
 var r_out = document.querySelector('#r_out');
 var g_out = document.querySelector('#g_out');
 var b_out = document.querySelector('#b_out');
