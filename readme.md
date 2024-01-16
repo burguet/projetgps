@@ -58,11 +58,10 @@ Base_ProjetDMX
       
 
 * __./documentation__  
-  - *cahier_des_charges.pdf*
+  - *cahierdescharges.pdf*
   - *gantdmxp_revi.pdf*     
   - *gantdmx_reel.pdf*    
     /img  
-        - *cahierdescharges.pdf*  
         - *class.jpg*
         - *exigenceDMX.jpg*  
         - *MCD.PNG*  
@@ -70,7 +69,7 @@ Base_ProjetDMX
         - *page_administrateur.PNG*    
         - *page_connexion.PNG*  
         - *page_inscription.PNG*  
-        - *sequenceDMX_C++.jpg*    
+          
     /diagrammes_sequences  
         - *sequenceDMX_C++.jpg*  
         - *inscription_php.png*  
