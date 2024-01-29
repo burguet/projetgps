@@ -10,6 +10,7 @@ Le projet peut être accessible via 2 IP :
 
 Un partage Samba existe et est joignable au lecteur suivant : \\192.168.64.84\SenepartProject\var\html\projetgps
 
+Pensé a installer les driver dmx sur pearltrees qui sont SiudiDriver.exe et siudi usb developerkit.exe et aussi installer qt en version 32bit.
 
 -----------------
 
